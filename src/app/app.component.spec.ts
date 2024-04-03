@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Neo-bank-frontend'`, () => {
+  it(`should have as title 'neo-bank'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Neo-bank-frontend');
+    expect(app.title).toEqual('neo-bank');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Neo-bank-frontend app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('neo-bank app is running!');
   });
 });
