@@ -1,1 +1,90 @@
-<p>home works!</p>
+<div class="home-container">
+    <app-sidebar></app-sidebar>
+    <div class="cards-container">
+        <div class="cards">
+            <p class="home-title">Cards</p>
+            <div *ngFor="let card of cards">
+                <div class="card">
+                    <p class="card-money">${{card.balance}}</p>
+                    <p class="card-number">{{card.cardNumber}}</p>
+                </div>
+            </div>
+            <button class="add-card-button" (click)="modalService.open('modal-1')">+ Add Card</button>
+
+
+        </div>
+        <div class="right-container">
+            <div class="overview">
+                <p class="home-title">Oveview</p>
+                <div class="overview-container">
+                    <div class="balance">
+                        <p class="card-title">Total Balance</p>
+                        <p class="balance-money">$5,265</p>
+                        <p class="account-number">**** **** **** **51</p>
+                        <button class="transfer-button">Tranfer</button>
+                        <button class="request-button">Request</button>
+                        <div class="total">
+                            <p class="total-income">Total Income : 5000</p>
+                            <p class="total-expense">Total Expense : 5000</p>
+                        </div>
+                    </div>
+                    <div class="limit">
+                        <p class="card-title">Spending Limit</p>
+                        <p class="spending-money">$665 from $2000</p>
+                        <input type="range" min="1" max="100" value="50" class="balance-range">
+                    </div>
+                </div>
+            </div>
+            <div class="transactions">
+                <p class="home-title">Transactions</p>
+                <div class="transactions-container">
+                    <div class="transaction-row">
+                        <p class="transaction-name">Name</p>
+                        <p class="transaction-type">Type</p>
+                        <p class="transaction-status">Completed</p>
+                        <p class="transaction-date">Transection Date</p>
+                        <p class="transaction-money">Amount</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <jw-modal id="modal-1">
+        <!-- new-card-form.component.html -->
+        <div class="new-card">
+            <p class="add-card-title">Card Details</p>
+            <form [formGroup]="cardForm" (ngSubmit)="addNewCard()">
+                <p class="add-card-head">Card Name</p>
+                <input type="text" class="new-card-name card-input" formControlName="cardName">
+                <!-- Display validation errors for cardName if invalid -->
+                <!-- <div *ngIf="cardForm.get('cardName')?.invalid && cardForm.get('cardName')?.touched">
+                    <span *ngIf="cardForm.get('cardName')?.errors?.['required']">Card Name is required.</span>
+                </div> -->
+
+                <p class="add-card-head">Card Number</p>
+                <input type="text" class="new-card-number card-input" formControlName="cardNumber">
+                <!-- Display validation errors for cardNumber if invalid -->
+                <!-- <div *ngIf="cardForm.get('cardNumber')?.invalid && cardForm.get('cardNumber')?.touched">
+                    <span *ngIf="cardForm.get('cardNumber')?.errors?.['required']">Card Number is required.</span>
+                </div> -->
+
+                <p class="add-card-head">CVV</p>
+                <input type="text" class="new-card-cvv card-input" formControlName="cvv">
+                <!-- Display validation errors for cvv if invalid -->
+                <!-- <div *ngIf="cardForm.get('cvv')?.invalid && cardForm.get('cvv')?.touched">
+                    <span *ngIf="cardForm.get('cvv')?.errors?.['required']">CVV is required.</span>
+                </div> -->
+
+                <p class="add-card-head">Expiry Date</p>
+                <input type="text" class="new-card-expiry card-input" formControlName="expirationDate">
+                <!-- Display validation errors for expiryDate if invalid -->
+                <!-- <div *ngIf="cardForm.get('expiryDate')?.invalid && cardForm.get('expiryDate')?.touched">
+                    <span *ngIf="cardForm.get('expiryDate')?.errors?.['required']">Expiry Date is required.</span>
+                </div> -->
+
+                <button type="submit" class="add-new-card-button">Add Card</button>
+            </form>
+        </div>
+
+    </jw-modal>

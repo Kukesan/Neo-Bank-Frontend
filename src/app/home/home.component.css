@@ -1,0 +1,196 @@
+.home-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 60px 20px 10px 20px;
+}
+
+.card-title {
+    font-size: 16px;
+    color: rgb(186, 185, 185);
+}
+
+.home-container {
+    display: flex;
+
+}
+
+.cards-container {
+    width: 100%;
+    display: flex;
+}
+
+.cards {
+    flex: 20%;
+}
+
+.card {
+    background-color: var(--telegrey);
+    margin: 10px 20px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-money {
+    font-size: 24px;
+    color: white;
+    margin-top: 10px;
+}
+
+.card-number {
+    font-size: 16px;
+    color: rgb(186, 185, 185);
+    margin-top: 20px;
+}
+
+.add-card-button {
+    background-color: var(--royal-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px 20px;
+    width: fill;
+}
+
+.add-card-title {
+    font-size: 16px;
+    margin: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.add-card-head {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.add-new-card-button{
+    background-color: var(--royal-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px 40px;
+    width: fill;
+
+}
+
+.right-container {
+    flex: 80%;
+}
+
+.card-input {
+    border: none;
+    border-bottom: 1px solid var(--telegrey);
+    width: 100%;
+}
+
+.overview-container {
+    display: flex;
+    margin: 10px;
+}
+
+.balance {
+    flex: 30%;
+    background-color: var(--telegrey);
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.balance-money {
+    font-size: 24px;
+    color: white;
+    margin-top: 10px;
+}
+
+.account-number {
+    font-size: 16px;
+    color: rgb(186, 185, 185);
+    margin-top: 10px;
+}
+
+.transfer-button {
+    background-color: var(--royal-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 48%;
+    margin-top: 10px;
+}
+
+.request-button {
+    background-color: #222222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 48%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.total {
+    margin-top: 20px;
+    display: flex;
+}
+
+.total-income {
+    font-size: 14px;
+    color: white;
+    width: 50%;
+    flex: 50%;
+    padding: 10px;
+}
+
+.total-expense {
+    font-size: 14px;
+    color: white;
+    width: 50%;
+    flex: 50%;
+    padding: 10px;
+}
+
+.limit {
+    flex: 70%;
+    background-color: var(--telegrey);
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.spending-money {
+    font-size: 24px;
+    color: white;
+    margin-top: 10px;
+}
+
+.balance-range {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.transactions {
+    flex: 100%;
+}
+
+.transactions-container {
+    background-color: var(--telegrey);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.transaction-row {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+
+    justify-content: space-between;
+}

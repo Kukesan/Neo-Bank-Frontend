@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+:root{
+  --royal-blue:#3D58ED;
+  --telegrey:#3d3d3d;
+}
+
+p{
+  margin:0;
+}

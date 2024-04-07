@@ -1,0 +1,26 @@
+.side-bar{
+    background-color: var(--telegrey);
+    width: 60px;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Align vertically */
+    align-items: center; /* Align horizontally */
+    margin-left: 4px;
+    margin-top: 1vh;
+    border-radius: 10px;
+}
+
+.side-bar-icon{
+    /* width: 100%; */
+    margin-bottom: 40px;
+}
+
+.white-icon {
+    color: white;
+    font-size: 30px;
+}
+
+.white-icon:hover {
+    color: white;
+}
