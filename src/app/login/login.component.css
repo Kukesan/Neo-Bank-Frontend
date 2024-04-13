@@ -1,0 +1,56 @@
+.app-title {
+    display: flex;
+    font-size: 20px;
+    font-weight: normal;
+    color: white;
+    align-items: center;
+    margin-left: 5%;
+    padding-top: 10%;
+}
+
+.login-label {
+    color: white;
+    margin-left: 7%;
+    padding-top: 5%;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh; 
+}
+
+
+.part1-container {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.part2-container {
+    flex: 1;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.button-google {
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    justify-content: center;
+}
+
+.logVmail {
+    display: flex;
+    padding: 3%;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.no-account-register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
