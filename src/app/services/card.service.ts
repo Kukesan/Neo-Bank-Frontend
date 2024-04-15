@@ -10,7 +10,7 @@ export class CardService {
 
   constructor(private http : HttpClient) { }
 
-  baseUrl = 'this.apiUrl' + "/Cards";
+  baseUrl = 'http://localhost:5004/api' + "/card";
 
   getAllCards():Observable<Card[]>{ 
     console.log(this.baseUrl);

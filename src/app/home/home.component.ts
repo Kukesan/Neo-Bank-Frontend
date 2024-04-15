@@ -13,24 +13,24 @@ import { CardService } from '../services/card.service';
 export class HomeComponent implements OnInit {
 
   cards: Card[] = [
-    {
-      id: 1,
-      cardNumber: '**** **** **** **34',
-      cardName: 'John Doe1',
-      expirationDate: '12/23',
-      cvv: '123',
-      balance: 62120.00,
-      cardType: 1
-    },
-    {
-      id: 2,
-      cardNumber: '**** **** **** **78',
-      cardName: 'John Doe2',
-      expirationDate: '12/23',
-      cvv: '123',
-      balance: 20500.33,
-      cardType: 1
-    }
+    // {
+    //   id: 1,
+    //   cardNumber: '**** **** **** **34',
+    //   cardName: 'John Doe1',
+    //   expirationDate: '12/23',
+    //   cvv: '123',
+    //   balance: 62120.00,
+    //   cardType: 1
+    // },
+    // {
+    //   id: 2,
+    //   cardNumber: '**** **** **** **78',
+    //   cardName: 'John Doe2',
+    //   expirationDate: '12/23',
+    //   cvv: '123',
+    //   balance: 20500.33,
+    //   cardType: 1
+    // }
   ];
 
 
@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private http: HttpClient, private cardService: CardService, protected modalService: ModalService) {
     this.cardForm = this.fb.group({
+      accountNumber: [''],
       cardNumber: [''],
       cardName: [''],
       expirationDate: [''],

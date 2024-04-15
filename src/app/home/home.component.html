@@ -69,6 +69,9 @@
                     <span *ngIf="cardForm.get('cardNumber')?.errors?.['required']">Card Number is required.</span>
                 </div> -->
 
+                <p class="add-card-head">Account Number</p>
+                <input type="text" class="new-card-number card-input" formControlName="accountNumber">
+
                 <p class="add-card-head">CVV</p>
                 <input type="text" class="new-card-cvv card-input" formControlName="cvv">
                 <!-- Display validation errors for cvv if invalid -->
