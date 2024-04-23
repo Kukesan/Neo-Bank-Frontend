@@ -10,6 +10,10 @@ import { TopbarComponent } from './shared/topbar/topbar.component';
 import { ModalComponent } from './home/modal/modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AppLogoComponent } from './shared/app-logo/app-logo.component';
+import { LongButtonComponent } from './shared/long-button/long-button.component';
+import { InputBarComponent } from './shared/input-bar/input-bar.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     SidebarComponent,
     TopbarComponent,
-    ModalComponent
+    ModalComponent,
+    AppLogoComponent,
+    LongButtonComponent,
+    InputBarComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
