@@ -13,13 +13,13 @@
         </div>
         <p style="color: white; text-align: center; font-weight: normal; font-size: medium;">or</p>
         <div class="logVmail">
-            <app-input-bar [placeholder]="'Enter your email'"></app-input-bar>
-            <app-input-bar [placeholder]="'Enter your password'"></app-input-bar>
+            <app-input-bar [placeholder]="'Enter your email'" [(ngModel)]="VM.email"></app-input-bar>
+            <app-input-bar [placeholder]="'Enter your password'" [(ngModel)]="VM.password"></app-input-bar>
         </div>
         <p style="color: white; text-align: center; font-weight:bolder; font-size: small;">Forgot your password?</p>
         <div style="padding-top: 10%;"></div>
         <div class="button-google">
-            <app-long-button [buttonTitle]="'Log In'" [bgColor]="'#3D58ED'"></app-long-button>
+            <app-long-button [buttonTitle]="'Log In'" [bgColor]="'#3D58ED'" (click)="VM.LoginClick(VM.email, VM.password)"></app-long-button>
         </div>
         <div class="no-account-register">
             <p style="color: white; text-align: center; font-weight:normal; font-size: small;">Don't have an account?</p>

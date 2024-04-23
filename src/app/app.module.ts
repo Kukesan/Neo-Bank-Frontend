@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppLogoComponent } from './shared/app-logo/app-logo.component';
 import { LongButtonComponent } from './shared/long-button/long-button.component';
 import { InputBarComponent } from './shared/input-bar/input-bar.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InputBarComponent } from './shared/input-bar/input-bar.component';
     ModalComponent,
     AppLogoComponent,
     LongButtonComponent,
-    InputBarComponent
+    InputBarComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
