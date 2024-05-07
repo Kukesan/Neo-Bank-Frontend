@@ -1,6 +1,5 @@
 export interface Card {
-    id: number;
-    accountNumber: string;
+    // id: number;
     cardNumber: string;
     cardName: string;
     expirationDate: string;

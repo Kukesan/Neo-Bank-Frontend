@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
       expirationDate: [''],
       cvv: [''],
       balance: [this.generateRandomBalance()],
-      cardType: [0],
+      cardType: ['0'],
     });
   }
 
