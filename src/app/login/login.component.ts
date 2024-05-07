@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Login } from '../models/login.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,9 @@ import { Login } from '../models/login.model';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService,private router:Router) {
+    localStorage.clear();
+   }
 
   ngOnInit(): void {
   }
@@ -21,7 +24,7 @@ export class LoginComponent implements OnInit {
       console.log(email, password);
       var loginModel: Login = {
         email: email,
-        username: 'arun@3463',
+        username: '',
         firstName: '',
         lastName: '',
         userId: '',
@@ -30,11 +33,9 @@ export class LoginComponent implements OnInit {
       }
       this.loginService.loginWithEmail(loginModel).subscribe(
         (authModel) => {
-          console.log(authModel); // Do something with the authentication response
-          // For example, you could store the authentication data in local storage
+          console.log(authModel); 
           localStorage.setItem('accessToken', authModel.accessToken);
-          // Redirect the user to another page
-          // You can use Angular Router for navigation
+          this.router.navigate(['/home']);
         },
         (error) => {
           console.error('Login failed:', error); // Handle login error
