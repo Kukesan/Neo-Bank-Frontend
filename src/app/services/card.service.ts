@@ -13,8 +13,11 @@ export class CardService {
   baseUrl = 'http://localhost:5004/api' ;
 
   getAllCards(): Observable<Card[]> {
-    console.log(this.baseUrl);
-    return this.http.get<Card[]>(this.baseUrl);
+    var headers = {
+      'Authorization': 'Bearer ' + localStorage.getItem("accessToken"),
+      'Content-Type': 'application/json'
+    };
+    return this.http.get<Card[]>(this.baseUrl + '/getAllCards',  { headers });
   }
 
   addCard(card: Card): Observable<number> {
@@ -24,7 +27,6 @@ export class CardService {
       'Authorization': 'Bearer ' + localStorage.getItem("accessToken"),
       'Content-Type': 'application/json'
     };
-    console.log(headers);
     return this.http.post<number>(url, card, { headers });
   }
 }

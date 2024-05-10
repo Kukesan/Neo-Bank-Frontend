@@ -1,10 +1,10 @@
 export interface Card {
     // id: number;
-    cardNumber: string;
-    cardName: string;
-    expirationDate: string;
+    card_no: string;
+    card_name: string;
+    expDate: string;
     cvv: string;
     balance: number;
-    cardType: number;
+    card_type: number;
     // user: User;
 }

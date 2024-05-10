@@ -3,19 +3,17 @@
     <div class="cards-container">
         <div class="cards">
             <p class="home-title">Cards</p>
-            <div *ngFor="let card of cards">
+            <div *ngFor="let cardItem of cards">
                 <div class="card">
-                    <p class="card-money">${{card.balance}}</p>
-                    <p class="card-number">{{card.cardNumber}}</p>
+                    <p class="card-money">${{cardItem.balance | number:'1.2-2'}}</p>
+                    <p class="card-number">{{cardItem.card_no}}</p>
                 </div>
             </div>
             <button class="add-card-button" (click)="modalService.open('modal-1')">+ Add Card</button>
-
-
         </div>
         <div class="right-container">
             <div class="overview">
-                <p class="home-title">Oveview</p>
+                <p class="home-title">Overview</p>
                 <div class="overview-container">
                     <div class="balance">
                         <p class="card-title">Total Balance</p>
@@ -56,21 +54,18 @@
             <p class="add-card-title">Card Details</p>
             <form [formGroup]="cardForm" (ngSubmit)="addNewCard()">
                 <p class="add-card-head">Card Name</p>
-                <input type="text" class="new-card-name card-input" formControlName="cardName">
+                <input type="text" class="new-card-name card-input" formControlName="card_name">
                 <!-- Display validation errors for cardName if invalid -->
                 <!-- <div *ngIf="cardForm.get('cardName')?.invalid && cardForm.get('cardName')?.touched">
                     <span *ngIf="cardForm.get('cardName')?.errors?.['required']">Card Name is required.</span>
                 </div> -->
 
                 <p class="add-card-head">Card Number</p>
-                <input type="text" class="new-card-number card-input" formControlName="cardNumber">
+                <input type="text" class="new-card-number card-input" formControlName="card_no">
                 <!-- Display validation errors for cardNumber if invalid -->
                 <!-- <div *ngIf="cardForm.get('cardNumber')?.invalid && cardForm.get('cardNumber')?.touched">
                     <span *ngIf="cardForm.get('cardNumber')?.errors?.['required']">Card Number is required.</span>
                 </div> -->
-
-                <p class="add-card-head">Account Number</p>
-                <input type="text" class="new-card-number card-input" formControlName="accountNumber">
 
                 <p class="add-card-head">CVV</p>
                 <input type="text" class="new-card-cvv card-input" formControlName="cvv">
@@ -80,7 +75,7 @@
                 </div> -->
 
                 <p class="add-card-head">Expiry Date</p>
-                <input type="text" class="new-card-expiry card-input" formControlName="expirationDate">
+                <input type="text" class="new-card-expiry card-input" formControlName="expDate">
                 <!-- Display validation errors for expiryDate if invalid -->
                 <!-- <div *ngIf="cardForm.get('expiryDate')?.invalid && cardForm.get('expiryDate')?.touched">
                     <span *ngIf="cardForm.get('expiryDate')?.errors?.['required']">Expiry Date is required.</span>

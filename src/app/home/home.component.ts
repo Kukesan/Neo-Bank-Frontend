@@ -12,44 +12,23 @@ import { CardService } from '../services/card.service';
 })
 export class HomeComponent implements OnInit {
 
-  cards: Card[] = [
-    // {
-    //   id: 1,
-    //   cardNumber: '**** **** **** **34',
-    //   cardName: 'John Doe1',
-    //   expirationDate: '12/23',
-    //   cvv: '123',
-    //   balance: 62120.00,
-    //   cardType: 1
-    // },
-    // {
-    //   id: 2,
-    //   cardNumber: '**** **** **** **78',
-    //   cardName: 'John Doe2',
-    //   expirationDate: '12/23',
-    //   cvv: '123',
-    //   balance: 20500.33,
-    //   cardType: 1
-    // }
-  ];
-
+  cards: Card[] =  [];
 
   cardForm: FormGroup;
 
   constructor(private fb: FormBuilder, private http: HttpClient, private cardService: CardService, protected modalService: ModalService) {
     this.cardForm = this.fb.group({
-      accountNumber: [''],
-      cardNumber: [''],
-      cardName: [''],
-      expirationDate: [''],
+      card_no: [''],
+      card_name: [''],
+      expDate: [''],
       cvv: [''],
       balance: [this.generateRandomBalance()],
-      cardType: ['0'],
+      card_type: ['0'],
     });
   }
 
   ngOnInit() {
-
+    this.getAllCards();
   }
 
   generateRandomBalance(): number {
@@ -65,6 +44,9 @@ export class HomeComponent implements OnInit {
       this.cardService.addCard(cardData).subscribe(
         (response: any) => {
           console.log(response)
+          this.cardForm.reset();
+          this.modalService.close();
+          this.getAllCards();
         }
       )
     } else {
@@ -72,5 +54,15 @@ export class HomeComponent implements OnInit {
     }
   }
 
-
+  getAllCards() {
+    this.cardService.getAllCards().subscribe(
+      (response:Card[]) => {
+        this.cards = response;
+        console.log('Cards:', this.cards);
+      },
+      error => {
+        console.error('Error fetching cards:', error);
+      }
+    )
+  }
 }
